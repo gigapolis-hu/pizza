@@ -1,10 +1,96 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DevSuli Pizza</title>
+
+    <link data-th-href="@{/css/bootstrap.css}" rel="stylesheet">
+
 </head>
 <body>
-$END$
+
+<div class="container py-3">
+    <header>
+        <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-4">DevSuli Pizza</span>
+            </a>
+
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a class="me-3 py-2 text-dark text-decoration-none" data-th-href="@{/}">Kezdőlap</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" data-th-href="@{/etlap}">Étlap</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" data-th-href="@{/rendeles}">Rendelés</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" data-th-href="@{/bemutatkozas}">Bemutatmozás</a>
+                <a class="py-2 text-dark text-decoration-none" data-th-href="@{/kapcsolat}">Kapcsolat</a>
+            </nav>
+        </div>
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">Rendelés</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="row mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Rendelés</h4>
+                    </div>
+                    <div class="card-body">
+                        <form data-th-action="@{/visszaigazolas}">
+                            <div class="form-group">
+                                <label for="nev">Név</label>
+                                <input type="text" class="form-control" id="nev">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="mobil">Telefonszám</label>
+                                <input type="text" class="form-control" id="mobil">
+                            </div>
+                            <div class="form-group">
+                                <label for="cim">Cím</label>
+                                <input type="text" class="form-control" id="cim">
+                            </div>
+                            <div class="form-group">
+                                <label for="pizza">Cím</label>
+                                <select class="form-control" id="pizza">
+                                    <option>Mexikói</option>
+                                    <option>Tonhalas</option>
+                                    <option>Sonkás</option>
+                                </select>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="kartya">
+                                <label class="form-check-label" for="kartya">Kártyás fizetés</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="megjegyzes">Megjegyzés</label>
+                                <textarea class="form-control" id="megjegyzes">
+                                </textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Rendelés</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-muted">&copy; 2022</small>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
 </body>
 </html>
